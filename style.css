@@ -1,0 +1,244 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600&display=swap');
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "poppins",sans-serif;
+}
+.header{ 
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    margin: 40px 20px 0 20px;
+    height: 30vh;
+}
+.header h3{
+    font-size: 3.5em;
+    font-weight: bold;
+    border-bottom: 3px solid #222;
+    width: 50%;
+    margin-left: 50%;
+    transform: translateX(-50%);
+    
+}
+.header h3 span{
+    font-weight:100;
+}
+.header .search-box{
+    height: 50px;
+    margin-top: 45px;
+    position: relative;
+    display: flex;
+    width: 50%;
+   margin-left: 50%;
+    align-items: center;
+    transform: translateX(-50%);
+    display: flex;
+    justify-content: space-around;
+}
+.search-box i{
+    position: absolute;
+    left: 4%;
+    top: 50%;
+    font-size: 1.4rem;
+    transform: translateY(-50%);
+    color: gray;
+}
+
+.search-box input{
+    width:100%;
+    height: 100%;
+    outline:none;
+    border: none;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    font-size: 18px;
+    padding: 10px 50px;
+    border-radius: 5px;
+    max-width: 550px;
+    color: #111;
+}
+.search-box input:focus{
+    border: 1px solid black;
+}
+
+.search-btn{
+    padding: 10px 20px;
+    background-color: #111;
+    color: white;
+    border: none;
+    font-size: 18px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, 0.2);
+    cursor: pointer;
+    border-radius: 5px;
+    margin-left: 10px;
+}
+.gallery{
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.gallery .images{
+    gap: 15px;
+    columns: 4 250px;
+    max-width: 95%;
+    margin-top: 10px;
+}
+.images .card{
+    list-style: none;
+    margin-bottom: 15px;
+    border-radius: 4px;
+    position: relative;
+    display: flex;
+    overflow: hidden;
+    cursor: pointer;
+}
+.images .card .details{
+    position: absolute;
+    bottom: -100px;
+    background: linear-gradient(to top,rgba(0,0,0,1),transparent);
+    width: 100%;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    transition: bottom 0.2s ease;
+}
+.images .card:hover .details{
+    bottom: 0;
+    cursor: pointer;
+}
+
+.details .name{
+    color: white;
+    display: flex;
+}
+.details .name span{
+    font-size: 1.05rem;
+    margin-right: 10px;
+}
+.card .details button{
+    cursor: pointer;
+    padding: 3px 8px;
+    font-size: 1.1rem;
+    border-radius: 5px;
+    border: none;
+    
+}
+.images img{
+  width: 100%;
+}
+.load-more{
+ margin: 50px 0;
+ font-size: 1.2rem;
+ color: white;
+ cursor: pointer;
+ padding: 12px 27px;
+ background-color:#111;
+ border: none;
+ border-radius: 5px;
+}
+.load-more.disabled{
+    opacity: 0.6;
+    pointer-events: none;
+}
+
+.lightbox{
+    position: fixed;
+    top: 0;
+    z-index: 5;
+    width: 100%;
+    height: 100%;
+    display: none;
+    background: rgba(0, 0, 0, 0.65);
+}
+.lightbox.show{
+    display: block;
+}
+.lightbox .wrapper{
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 95%;
+    padding: 15px;
+    max-width: 850px;
+    background: #fff;
+    border-radius: 5px;
+    transform: translate(-50%,-50%);
+    align-items: center;
+}
+.wrapper header{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.wrapper .name{
+    color: #111;
+    width: 70%;
+    padding-left: 10px;
+    padding-top: 10px;
+}
+.wrapper .name span{
+    font-size: 1.2rem;
+}
+.wrapper .buttons{
+    padding: 10px;
+    display: flex;
+    justify-content: space-around;
+}
+.wrapper .buttons i{
+    width: 40px;
+    height: 40px;
+    display: inline-block;
+    font-size: 1.9rem;
+    line-height: 40px;
+    border-radius: 5px;
+    color: #111;
+    text-align: center;
+    padding: 4px;
+    cursor: pointer;
+}
+
+.preview-img{
+    display: flex;
+    margin-top: 25px;
+    justify-content: center;
+}
+.wrapper .preview-img .img{
+    max-height: 70vh;
+    max-width: 90vh;
+}
+.wrapper .preview-img .img img{
+    width: 100%;
+    object-fit: contain;
+    height: 100%;
+}
+
+@media screen and (max-width:800px){
+    .header h3{
+        
+        width: 80%;
+
+    }
+    .header .search-box{
+        width: 80%;
+    }
+}
+@media screen and (max-width:600px){
+    .header h3{
+        width: 100%;
+
+    }
+    .header .search-box{
+        width: 100%;
+    }
+    
+}
+@media screen and (max-width:400px)
+{
+    .header h3{
+        width: 100%;
+        font-size: 2.6rem;
+    }
+}
